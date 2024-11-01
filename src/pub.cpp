@@ -14,7 +14,7 @@ std::string src = "nvarguscamerasrc sensor-id=0 ! \
 int main(int argc, char* argv[])
 {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<rclcpp::Node>("camPub_Node");
+    auto node = std::make_shared<rclcpp::Node>("img_pub_Node");
     auto qos_profile = rclcpp::QoS(rclcpp::KeepLast(10)).best_effort();
     auto mypub = node->create_publisher<sensor_msgs::msg::CompressedImage>("image/compressed", qos_profile);
     
